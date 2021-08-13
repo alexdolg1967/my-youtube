@@ -24,7 +24,7 @@ export default {
 		TheSidebarMobile,
 		TheSidebarSmall,
 		TheCategories,
-		TheVideos
+		TheVideos,
 	}
 }
 </script>
