@@ -199,6 +199,4 @@
       </section>
     </aside>
   </div>
-
 </template>
-
