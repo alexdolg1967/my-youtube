@@ -1,15 +1,17 @@
 <template>
-  <div class="py-3 flex space-x-3 overflow-auto text-sm whitespace-nowrap">
-    <a href="#" :class="classes">{{ category }}</a>
-  </div>
+  <a href="#" :class="classes">
+    {{ category }}
+  </a>
 </template>
 
 <script>
 export default {
   props: ['category', 'isActive'],
+
   computed: {
     classes () {
-      const classes = ['mx-1 px-3', 'py-1', 'transition', 'rounded-full', 'border']
+      const classes = ['px-3', 'py-1', 'transition', 'rounded-full', 'border']
+
       return this.isActive
         ? [
             ...classes,
