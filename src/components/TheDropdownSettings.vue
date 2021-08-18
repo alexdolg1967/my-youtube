@@ -1,62 +1,66 @@
 <template>
    <div class="relative">
-      <button
-         @click="isOpen = !isOpen"
-         class="relative p-2 focus:outline-none"
-      >
-         <BaseIcon name="dotsVertical" class="w-5 h-5" />
-      </button>
-		<transition
-			enter-active-class="transition ease-out duration-100"
-			enter-from-class="opacity-0 scale-95"
-			enter-to-class="opacity-100 scale-100"
-			leave-active-class="transition ease-in duration-75"
-			leave-from-class="opacity-100 scale-100"
-			leave-to-class="opacity-0 scale-95"
-		>
-      <div
-			v-show="isOpen"
-			ref="dropdown"
-         	@keydown.esc="isOpen = false"
-         	tabindex="-1"
-         class="absolute top-9 -right-full sm:right-0 bg-white w-72 border border-t-0 focus:outline-none"
-      >
-         <section class="py-2 border-b">
-            <ul>
-               <DropdownSettingsListItem
-                  v-for="listItem in listItems.slice(0, 8)"
-                  :key="listItem.label"
-                  :label="listItem.label"
-                  :icon="listItem.icon"
-                  :with-sub-menu="listItem.withSubMenu"
-               />
-            </ul>
-         </section>
-         <section class="py-2">
-            <ul>
-               <DropdownSettingsListItem
-                  :label="listItems[8].label"
-                  :with-sub-menu="listItems[8].withSubMenu"
-               />
-            </ul>
-         </section>
-      </div>
-		</transition>
+      <BaseTooltip text="Youtube settings">
+         <button
+            @click="isOpen = !isOpen"
+            class="relative p-2 focus:outline-none"
+         >
+            <BaseIcon name="dotsVertical" class="w-5 h-5" />
+         </button>
+         <transition
+            enter-active-class="transition ease-out duration-100"
+            enter-from-class="opacity-0 scale-95"
+            enter-to-class="opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75"
+            leave-from-class="opacity-100 scale-100"
+            leave-to-class="opacity-0 scale-95"
+         >
+            <div
+               v-show="isOpen"
+               ref="dropdown"
+               @keydown.esc="isOpen = false"
+               tabindex="-1"
+               class="absolute top-9 -right-full sm:right-0 bg-white w-72 border border-t-0 focus:outline-none"
+            >
+               <section class="py-2 border-b">
+                  <ul>
+                     <DropdownSettingsListItem
+                        v-for="listItem in listItems.slice(0, 8)"
+                        :key="listItem.label"
+                        :label="listItem.label"
+                        :icon="listItem.icon"
+                        :with-sub-menu="listItem.withSubMenu"
+                     />
+                  </ul>
+               </section>
+               <section class="py-2">
+                  <ul>
+                     <DropdownSettingsListItem
+                        :label="listItems[8].label"
+                        :with-sub-menu="listItems[8].withSubMenu"
+                     />
+                  </ul>
+               </section>
+            </div>
+         </transition>
+      </BaseTooltip>
    </div>
 </template>
 
 <script>
+import BaseTooltip from './BaseTooltip.vue'
 import DropdownSettingsListItem from './DropdownSettingsListItem.vue'
 import BaseIcon from './BaseIcon.vue'
 export default {
    components: {
+		BaseTooltip,
+      BaseIcon,
       DropdownSettingsListItem,
-      BaseIcon
    },
 
    data () {
       return {
-			isOpen: false,
+         isOpen: false,
          listItems: [
             {
                label: 'Appearance: Light',

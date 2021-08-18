@@ -3,7 +3,16 @@
       <div class="h-full" @mouseenter="toggle" @mouseleave="toggle">
          <slot />
       </div>
-      <div v-show="isShow" :class="Classes">{{ text }}</div>
+      <transition
+         enter-active-class="duration-200"
+			enter-from-class="opacity-0"
+			enter-to-class="opacity-100"
+			leave-active-class="duration-75"
+			leave-from-class="opacity-100"
+			leave-to-class="opacity-0"
+      >
+         <div v-show="isShow" :class="Classes">{{ text }}</div>
+      </transition>
    </div>
 </template>
 
@@ -31,7 +40,7 @@ export default {
             'whitespace-nowrap',
             'p-2',
             'absolute',
-            'top-14',
+            'top-10',
             'left-1/2',
             'transform',
             '-translate-x-1/2'
