@@ -20,7 +20,7 @@
                ref="dropdown"
                @keydown.esc="isOpen = false"
                tabindex="-1"
-               class="absolute top-9 -right-full sm:right-0 bg-white w-72 border border-t-0 focus:outline-none"
+               :class="dropdownClasses"
             >
                <section class="py-2 border-b">
                   <ul>
@@ -53,9 +53,9 @@ import DropdownSettingsListItem from './DropdownSettingsListItem.vue'
 import BaseIcon from './BaseIcon.vue'
 export default {
    components: {
-		BaseTooltip,
+      BaseTooltip,
       BaseIcon,
-      DropdownSettingsListItem,
+      DropdownSettingsListItem
    },
 
    data () {
@@ -107,6 +107,18 @@ export default {
                icon: null,
                withSubMenu: true
             }
+         ],
+         dropdownClasses: [
+            'absolute',
+            'top-9',
+				'z-10',
+            '-right-full',
+            'sm:right-0',
+            'bg-white',
+            'w-72',
+            'border',
+            'border-t-0',
+            'focus:outline-none'
          ]
       }
    },

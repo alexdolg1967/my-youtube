@@ -11,6 +11,7 @@
             <LogoMain />
          </div>
       </div>
+		<TheSearchMobile />
       <div
          class="hidden sm:flex items-center justify-end p-2.5 pl-8 md:pl-12 md:px-8 flex-1 lg:px-0 lg:w-1/2 max-w-screen-md"
       >
@@ -46,6 +47,7 @@ import BaseIcon from './BaseIcon.vue'
 import BaseTooltip from './BaseTooltip.vue'
 import LogoMain from './LogoMain.vue'
 import TheSearch from './TheSearch.vue'
+import TheSearchMobile from './TheSearchMobile.vue'
 import ButtonLogin from './ButtonLogin.vue'
 import TheDropdownApps from './TheDropdownApps.vue'
 import TheDropdownSettings from './TheDropdownSettings.vue'
@@ -56,6 +58,7 @@ export default {
       BaseTooltip,
       LogoMain,
       TheSearch,
+		TheSearchMobile,
       ButtonLogin,
       TheDropdownApps,
       TheDropdownSettings
