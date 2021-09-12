@@ -1,18 +1,18 @@
 <template>
-  <div class="flex w-full h-full mr-2">
-    <TheSearchInput />
-    <TheSearchButton />
-  </div>
+    <div class="flex w-full h-full mr-2">
+        <TheSearchInput />
+        <TheSearchButton />
+    </div>
 </template>
 
 <script>
-import TheSearchInput from './TheSearchInput.vue'
-import TheSearchButton from './TheSearchButton.vue'
+import TheSearchInput from "./TheSearchInput.vue";
+import TheSearchButton from "./TheSearchButton.vue";
 
 export default {
-  components: {
-    TheSearchInput,
-    TheSearchButton
-  }
-}
+    components: {
+        TheSearchInput,
+        TheSearchButton,
+    },
+};
 </script>
