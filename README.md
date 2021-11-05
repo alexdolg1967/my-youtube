@@ -1,16 +1,27 @@
 # Clon YOUTUBE Vue3 + Tailwind
 
+## Demo
 
+https://alexdolg1967.github.io/my-youtube/
 
 ## Отразить изменения на Gihub Pages
 
+in file vite.config.js add base: "link"
+
 ```
-git subtree push --prefix app origin gh-pages
+npm run build
+
+git add dist -f
+
+git commit -m "adding dist"
+
+git subtree push --prefix dist origin gh-pages
 ```
 
 ## Полезности на будущее
 
 Пример анимацииmargin: auto;
+
 ```
 <transition
 	enter-active-class="transition ease-out duration-100"
@@ -21,7 +32,6 @@ git subtree push --prefix app origin gh-pages
 	leave-to-class="opacity-0 scale-95"
 >
 ```
-
 
 В CSS под "ишака"
 
